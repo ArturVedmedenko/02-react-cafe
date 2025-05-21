@@ -4,10 +4,10 @@ import type { VoteType } from '../../types/votes';
 interface VoteOptionsProps {
   onVote: (type: VoteType) => void;
   onReset: () => void;
-  isResetVisible: boolean;
+  canReset: boolean;
 }
 
-const VoteOptions = ({ onVote, onReset, isResetVisible }: VoteOptionsProps) => {
+const VoteOptions = ({ onVote, onReset, canReset }: VoteOptionsProps) => {
   return (
     <div className={css.container}>
       <button
@@ -31,7 +31,7 @@ const VoteOptions = ({ onVote, onReset, isResetVisible }: VoteOptionsProps) => {
       >
         Bad
       </button>
-      {isResetVisible && (
+      {canReset && (
         <button
           type="button"
           className={`${css.button} ${css.reset}`}

@@ -33,7 +33,7 @@ const App = () => {
       <CafeInfo />
       <VoteOptions
         onVote={handleVote}
-        isResetVisible={totalVotes > 0}
+        canReset={totalVotes > 0}
         onReset={resetVotes}
       />
       {totalVotes > 0 ? (
